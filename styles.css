@@ -1,0 +1,337 @@
+/* ==========================================================================
+   Ali Rashid — Clean Personal Site
+   Strict Light Theme | No AI Slop | Zero Scroll
+   ========================================================================== */
+
+:root {
+  --bg-page: #faf9f6;         /* Natural warm gallery stone */
+  --bg-card: #ffffff;
+  --border-subtle: #e8e6e1;
+  --border-strong: #d2cfc8;
+
+  --ink-primary: #191919;     /* Natural deep carbon black */
+  --ink-secondary: #575550;   /* Warm charcoal */
+  --ink-muted: #85827b;       /* Muted grey */
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden; /* Strict no-scroll on desktop screens */
+}
+
+/* Card canvas centering on single viewport */
+.card-canvas {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.portfolio-card {
+  width: 100%;
+  max-width: 680px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 38px 42px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.person-name {
+  font-size: 1.625rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--ink-primary);
+  line-height: 1.2;
+}
+
+.role-title {
+  font-size: 0.9375rem;
+  color: var(--ink-secondary);
+  font-weight: 400;
+  margin-top: 3px;
+}
+
+.location-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-page);
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+.time-sep {
+  opacity: 0.5;
+}
+
+.local-time {
+  color: var(--ink-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Body */
+.card-body {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tagline {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+  letter-spacing: -0.01em;
+}
+
+.summary {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+}
+
+/* Witty Note Box */
+.note-box {
+  background-color: var(--bg-page);
+  border-left: 2px solid var(--ink-primary);
+  padding: 14px 18px;
+  margin-top: 2px;
+  border-radius: 0 4px 4px 0;
+}
+
+.note-quote {
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  font-style: italic;
+  color: var(--ink-primary);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.note-invite {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+/* Footer & Actions */
+.card-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 120ms ease;
+  line-height: 1;
+}
+
+.btn-cv {
+  background-color: var(--ink-primary);
+  color: #ffffff;
+  border: 1px solid var(--ink-primary);
+}
+
+.btn-cv:hover {
+  background-color: #333333;
+}
+
+.file-tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.btn-secondary {
+  background-color: var(--bg-card);
+  color: var(--ink-primary);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-page);
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+.meta-link {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.meta-link:hover {
+  color: var(--ink-primary);
+  border-color: var(--ink-primary);
+}
+
+.sep {
+  opacity: 0.4;
+}
+
+.phone-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+/* Minimal Inline Contact Drawer */
+.inline-form {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inline-form[hidden] {
+  display: none;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.field-input, .field-textarea {
+  width: 100%;
+  padding: 7px 10px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  color: var(--ink-primary);
+}
+
+.field-input:focus, .field-textarea:focus {
+  outline: none;
+  border-color: var(--ink-primary);
+}
+
+.field-textarea {
+  resize: none;
+}
+
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-submit {
+  background-color: var(--ink-primary);
+  color: #ffffff;
+  border: 1px solid var(--ink-primary);
+}
+
+.btn-submit:hover {
+  background-color: #333333;
+}
+
+.mail-hint {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.form-feedback {
+  font-size: 0.75rem;
+  color: #b91c1c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  html, body {
+    overflow-y: auto; /* Fallback for very small phone screens */
+    height: auto;
+  }
+  .card-canvas {
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+  }
+  .portfolio-card {
+    padding: 24px 20px;
+  }
+  .card-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn {
+    justify-content: center;
+  }
+  .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sep {
+    display: none;
+  }
+}
