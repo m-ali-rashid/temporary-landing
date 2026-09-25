@@ -28,23 +28,41 @@
 
   // 2. Toggle Inline Contact Form
   const toggleBtn = document.getElementById('toggle-form-btn');
+  const stickySayHello = document.getElementById('sticky-say-hello');
   const contactForm = document.getElementById('contact-form');
   const nameInput = document.getElementById('sender-name');
   const emailInput = document.getElementById('sender-email');
   const messageInput = document.getElementById('sender-message');
   const feedbackEl = document.getElementById('form-feedback');
 
+  function openContactForm() {
+    if (!contactForm) return;
+    contactForm.removeAttribute('hidden');
+    if (toggleBtn) toggleBtn.textContent = 'Close Note';
+    if (nameInput) nameInput.focus();
+  }
+
+  function closeContactForm() {
+    if (!contactForm) return;
+    contactForm.setAttribute('hidden', '');
+    if (toggleBtn) toggleBtn.textContent = 'Send Note';
+  }
+
   if (toggleBtn && contactForm) {
     toggleBtn.addEventListener('click', () => {
       const isHidden = contactForm.hasAttribute('hidden');
       if (isHidden) {
-        contactForm.removeAttribute('hidden');
-        toggleBtn.textContent = 'Close Note';
-        if (nameInput) nameInput.focus();
+        openContactForm();
       } else {
-        contactForm.setAttribute('hidden', '');
-        toggleBtn.textContent = 'Send Note';
+        closeContactForm();
       }
+    });
+  }
+
+  if (stickySayHello) {
+    stickySayHello.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactForm();
     });
   }
 
