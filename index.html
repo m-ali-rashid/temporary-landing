@@ -45,25 +45,134 @@
             “I build customer-facing software across web, mobile, and backend. Most recently, I’ve led mobile engineering in banking, working across product journeys, APIs, integrations, and production releases.”
           </p>
 
-          <!-- Square Post-it Note with Organic Edges -->
-          <div class="postit-wrapper">
-            <aside class="postit-note" aria-label="Current status checklist">
-              <div class="postit-pin" aria-hidden="true"></div>
-              <ul class="postit-checklist">
-                <li class="done">
-                  <span class="check-mark" aria-hidden="true">✓</span>
-                  <span>Led mobile engineering for production banking apps (RAKBANK)</span>
-                </li>
-                <li class="done">
-                  <span class="check-mark" aria-hidden="true">✓</span>
-                  <span>Built full-stack React, React Native, Node.js & real-time systems</span>
-                </li>
-                <li class="pending">
-                  <span class="check-mark" aria-hidden="true">☐</span>
-                  <span>Building a portfolio to showcase my work</span>
-                </li>
-              </ul>
-            </aside>
+          <!-- Showcase Row: Mouse-following AI Robot on Left, Post-it Note on Right -->
+          <div class="showcase-row">
+            <!-- Left: Mouse-Following AI Robot -->
+            <div class="robot-col">
+              <div class="robot-speech-bubble" id="robot-bubble">
+                <span id="robot-speech-text">Tracking your cursor... 👀</span>
+              </div>
+              
+              <div class="robot-canvas-wrapper" id="robot-interactive" role="button" tabindex="0" aria-label="Interactive AI robot tracking your cursor. Click to interact.">
+                <svg id="robot-svg" viewBox="0 0 160 175" class="robot-svg" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="headGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="60%" stop-color="#f1f5f9" />
+                      <stop offset="100%" stop-color="#e2e8f0" />
+                    </linearGradient>
+                    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#f8fafc" />
+                      <stop offset="100%" stop-color="#cbd5e1" />
+                    </linearGradient>
+                    <linearGradient id="visorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#090d16" />
+                      <stop offset="100%" stop-color="#111827" />
+                    </linearGradient>
+                    <filter id="eyeGlow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <!-- Soft Ground Shadow -->
+                  <ellipse id="robot-ground-shadow" cx="80" cy="166" rx="36" ry="5.5" fill="rgba(15, 23, 42, 0.08)" />
+
+                  <!-- Main Hovering Container -->
+                  <g id="robot-hover-group">
+                    <!-- Torso / Body -->
+                    <g id="robot-torso-group">
+                      <!-- Left Arm -->
+                      <rect id="robot-arm-left" x="35" y="112" width="8" height="24" rx="4" fill="#94a3b8" />
+                      <!-- Right Arm -->
+                      <rect id="robot-arm-right" x="117" y="112" width="8" height="24" rx="4" fill="#94a3b8" />
+                      <!-- Torso Body -->
+                      <rect x="47" y="108" width="66" height="42" rx="14" fill="url(#bodyGrad)" stroke="#cbd5e1" stroke-width="1.5" />
+                      <!-- Chest Core Accent -->
+                      <circle cx="80" cy="128" r="6" fill="#0284c7" opacity="0.3" />
+                      <circle cx="80" cy="128" r="4" fill="#0284c7" />
+                      <circle cx="80" cy="128" r="2.2" fill="#38bdf8" class="pulse-core" />
+                    </g>
+
+                    <!-- Metallic Neck Joint -->
+                    <rect x="74" y="101" width="12" height="9" rx="2" fill="#64748b" />
+
+                    <!-- Head Group with 3D/2D tilt -->
+                    <g id="robot-head-group">
+                      <!-- Antenna -->
+                      <line x1="80" y1="21" x2="80" y2="35" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" />
+                      <circle cx="80" cy="18" r="5" fill="#38bdf8" filter="url(#eyeGlow)" />
+                      <circle cx="80" cy="18" r="2.5" fill="#ffffff" />
+
+                      <!-- Left Ear Sensor -->
+                      <rect x="23" y="55" width="8" height="26" rx="4" fill="#94a3b8" />
+                      <circle cx="27" cy="68" r="2" fill="#64748b" />
+
+                      <!-- Right Ear Sensor -->
+                      <rect x="129" y="55" width="8" height="26" rx="4" fill="#94a3b8" />
+                      <circle cx="133" cy="68" r="2" fill="#64748b" />
+
+                      <!-- Head Main Shell -->
+                      <rect x="29" y="34" width="102" height="70" rx="35" fill="url(#headGrad)" stroke="#cbd5e1" stroke-width="1.5" />
+
+                      <!-- Dark Curved OLED Visor Screen -->
+                      <rect x="42" y="45" width="76" height="48" rx="24" fill="url(#visorGrad)" stroke="#1e293b" stroke-width="1" />
+                      <!-- Visor Upper Gloss Curve -->
+                      <path d="M 48 53 Q 80 47 112 53 A 40 40 0 0 0 48 53" fill="rgba(255, 255, 255, 0.09)" />
+
+                      <!-- Dynamic Eye Tracking Group -->
+                      <g id="robot-eyes-group">
+                        <!-- Standard Circular/Pill Glowing Cyan Eyes -->
+                        <g id="eyes-normal">
+                          <!-- Left Eye -->
+                          <rect id="robot-eye-left" x="55" y="61" width="14" height="17" rx="7" fill="#38bdf8" filter="url(#eyeGlow)" />
+                          <circle id="robot-pupil-left" cx="59" cy="65" r="2" fill="#ffffff" />
+
+                          <!-- Right Eye -->
+                          <rect id="robot-eye-right" x="91" y="61" width="14" height="17" rx="7" fill="#38bdf8" filter="url(#eyeGlow)" />
+                          <circle id="robot-pupil-right" cx="95" cy="65" r="2" fill="#ffffff" />
+                        </g>
+
+                        <!-- Happy Arched Eyes for Click Reaction -->
+                        <g id="eyes-happy" style="display: none;">
+                          <path d="M 54 71 Q 62 60 70 71" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" fill="none" filter="url(#eyeGlow)" />
+                          <path d="M 90 71 Q 98 60 106 71" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" fill="none" filter="url(#eyeGlow)" />
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="robot-status-pill">
+                <span class="robot-live-indicator"></span>
+                <span class="robot-hint">Click me · I follow your cursor</span>
+              </div>
+            </div>
+
+            <!-- Right: Post-it Note -->
+            <div class="postit-wrapper">
+              <aside class="postit-note" aria-label="Current status checklist">
+                <div class="postit-pin" aria-hidden="true"></div>
+                <ul class="postit-checklist">
+                  <li class="done">
+                    <span class="check-mark" aria-hidden="true">✓</span>
+                    <span>Led mobile engineering for production banking apps (RAKBANK)</span>
+                  </li>
+                  <li class="done">
+                    <span class="check-mark" aria-hidden="true">✓</span>
+                    <span>Built full-stack React, React Native, Node.js & real-time systems</span>
+                  </li>
+                  <li class="pending">
+                    <span class="check-mark" aria-hidden="true">☐</span>
+                    <span>Building a portfolio to showcase my work</span>
+                  </li>
+                </ul>
+              </aside>
+            </div>
           </div>
         </section>
 
