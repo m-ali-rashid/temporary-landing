@@ -32,6 +32,17 @@
             <span class="geo-city">Dubai, UAE</span>
             <span class="time-sep">/</span>
             <span class="local-time" id="dubai-time">--:-- GST</span>
+            <script>
+              try {
+                document.getElementById('dubai-time').textContent =
+                  new Intl.DateTimeFormat('en-GB', {
+                    timeZone: 'Asia/Dubai',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false,
+                  }).format(new Date()) + ' GST';
+              } catch (e) {}
+            </script>
           </div>
         </header>
 
@@ -284,6 +295,6 @@
 
     <!-- GSAP via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
