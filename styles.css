@@ -284,7 +284,7 @@ html, body {
   border: 1px solid rgba(225, 208, 140, 0.45);
   border-bottom-color: rgba(195, 172, 100, 0.5);
   
-  padding: 22px 20px 18px 20px;
+  padding: 20px 18px 16px 18px;
   box-sizing: border-box;
   
   display: flex;
@@ -342,7 +342,7 @@ html, body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 10px;
 }
 
 .postit-checklist li {
